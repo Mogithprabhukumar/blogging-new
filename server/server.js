@@ -31,7 +31,13 @@ dns.setServers(['8.8.8.8', '8.8.4.4']); // Google DNS
  let emailRegex = /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/; // regex for email
 let passwordRegex = /^(?=.\d)(?=.[a-z])(?=.*[A-Z]).{6,20}$/; // regex for password
  server.use(express.json());
- server.use(cors())
+ server.use(cors(
+  {
+   origin:["https://deploy-mern-1whq.vercel.server"],
+   methods:["POST","GET"],
+   credentials:true
+  }
+ ));
 
  
  mongoose.connect(process.env.DB_LOCATION, {autoIndex: true})
