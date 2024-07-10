@@ -32,11 +32,6 @@ dns.setServers(['8.8.8.8', '8.8.4.4']); // Google DNS
 let passwordRegex = /^(?=.\d)(?=.[a-z])(?=.*[A-Z]).{6,20}$/; // regex for password
  server.use(express.json());
  server.use(cors(
-  {
-   origin:["https://blogging-new-dj7m.vercel.app/"],
-   methods:["POST","GET"],
-   credentials:true
-  }
  ));
 
  
