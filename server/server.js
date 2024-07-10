@@ -32,6 +32,11 @@ dns.setServers(['8.8.8.8', '8.8.4.4']); // Google DNS
 let passwordRegex = /^(?=.\d)(?=.[a-z])(?=.*[A-Z]).{6,20}$/; // regex for password
  server.use(express.json());
  server.use(cors(
+  {
+   origin: ['*','localhost:5173'], // replace with your frontend domain
+    methods: ['GET', 'POST'],
+    credentials: true,
+  }
  ));
 
  
